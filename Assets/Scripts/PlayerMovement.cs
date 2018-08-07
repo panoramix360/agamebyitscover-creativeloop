@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float scaleMinLimit = 6f;
     public float scaleMaxLimit = 12f;
+    public float offset = 3f;
 
     public float speed = 5f;
 
@@ -26,14 +27,15 @@ public class PlayerMovement : MonoBehaviour {
 
     private void HandleDistance()
     {
-        
-        float positionOnScreen = Vector3.Normalize(Camera.main.WorldToScreenPoint(transform.position)).y;
-        float scale = positionOnScreen * 8f;
-        float scaleX = Mathf.Clamp(transform.localScale.x + scale, scaleMinLimit, scaleMaxLimit);
-        float scaleY = Mathf.Clamp(transform.localScale.y + scale, scaleMinLimit, scaleMaxLimit);
+        float offsetSpan = scaleMaxLimit - scaleMinLimit;
+        float positionOnScreen = Mathf.Abs(Camera.main.WorldToScreenPoint(transform.position).y - Screen.height);
+        float positionOnScreenNormalized = (positionOnScreen - scaleMinLimit) / offsetSpan;
+
+        float scaleX = Mathf.Clamp(positionOnScreenNormalized + offset, scaleMinLimit, scaleMaxLimit);
+        float scaleY = Mathf.Clamp(positionOnScreenNormalized + offset, scaleMinLimit, scaleMaxLimit);
         transform.localScale = new Vector3(scaleX, scaleY, 0f);
 
-        Debug.Log(positionOnScreen);
+        Debug.Log(positionOnScreenNormalized + offset);
     }
 
     private void HandleMovement(float verticalInput)

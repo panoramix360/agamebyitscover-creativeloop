@@ -75,6 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMinLimit: 6
   scaleMaxLimit: 12
+  offset: 3
+  speed: 5
 --- !u!212 &212568007887791522
 SpriteRenderer:
   m_ObjectHideFlags: 1
