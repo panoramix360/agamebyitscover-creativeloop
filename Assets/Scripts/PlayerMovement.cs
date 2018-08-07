@@ -6,15 +6,20 @@ public class PlayerMovement : MonoBehaviour {
     public float scaleMaxLimit = 12f;
     public float offset = 3f;
 
-    public float speed = 5f;
+    public float speed = 8f;
 
     private Transform transform;
     private Rigidbody2D rigidbody;
+    private float initialSpeed;
 
     private void Awake()
     {
         transform = GetComponent<Transform>();
         rigidbody = GetComponent<Rigidbody2D>();
+
+        rigidbody.AddTorque(Random.Range(-20f, 20f));
+
+        initialSpeed = speed;
     }
 
     private void FixedUpdate()
@@ -34,12 +39,22 @@ public class PlayerMovement : MonoBehaviour {
         float scaleX = Mathf.Clamp(positionOnScreenNormalized + offset, scaleMinLimit, scaleMaxLimit);
         float scaleY = Mathf.Clamp(positionOnScreenNormalized + offset, scaleMinLimit, scaleMaxLimit);
         transform.localScale = new Vector3(scaleX, scaleY, 0f);
-
-        Debug.Log(positionOnScreenNormalized + offset);
     }
 
     private void HandleMovement(float verticalInput)
     {
+        if(verticalInput == 0)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = initialSpeed;
+        }
+
         rigidbody.AddForce(new Vector2(0f, speed * verticalInput));
+
+        Debug.Log(rigidbody.velocity);
+        
     }
 }
