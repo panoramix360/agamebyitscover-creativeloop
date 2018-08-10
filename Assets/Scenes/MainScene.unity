@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 1670047941}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ambientObjects:
-  - {fileID: 1751513040992138, guid: af9c50424dae84949ae8bd518dbdbc69, type: 2}
+  - {fileID: 0}
 --- !u!114 &1670047941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b5547cdc6605940a6f62dde811f7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1936582012
+--- !u!1001 &1902541170
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -418,11 +418,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4910642340104820, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.63
+      value: -2.328
       objectReference: {fileID: 0}
     - target: {fileID: 4910642340104820, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.13
+      value: -2.003
       objectReference: {fileID: 0}
     - target: {fileID: 4910642340104820, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -447,14 +447,6 @@ Prefab:
     - target: {fileID: 4910642340104820, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910642340104820, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910642340104820, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 677381d18222cc04aabd33d36eb96feb, type: 2}

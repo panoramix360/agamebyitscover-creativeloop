@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212792294987700478}
   - component: {fileID: 58374093794608442}
   - component: {fileID: 50952819244343054}
-  - component: {fileID: 114780508166162312}
   m_Layer: 0
   m_Name: Meteoroid
   m_TagString: Untagged
@@ -78,20 +77,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
---- !u!114 &114780508166162312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1329597434879218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4a040fcf32bc94ebda01db6b98a10d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleMinLimit: 2.7
-  scaleMaxLimit: 5
-  offset: -12
 --- !u!212 &212792294987700478
 SpriteRenderer:
   m_ObjectHideFlags: 1

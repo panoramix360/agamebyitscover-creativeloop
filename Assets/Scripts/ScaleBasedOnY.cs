@@ -2,9 +2,10 @@
 
 public class ScaleBasedOnY : MonoBehaviour {
 
-    public float scaleMinLimit = 2.7f;
-    public float scaleMaxLimit = 5f;
-    public float offset = -12f;
+    public float positionToScale = 4f;
+
+    public float scaleMin = 2.5f;
+    public float scaleMax = 5f;
 
     private Transform transform;
 
@@ -20,14 +21,9 @@ public class ScaleBasedOnY : MonoBehaviour {
 
     private void HandleDistance()
     {
-        float offsetSpan = scaleMaxLimit - scaleMinLimit;
-        float positionOnScreen = Mathf.Abs(Camera.main.WorldToScreenPoint(transform.position).y - Screen.height);
-        float positionOnScreenNormalized = (positionOnScreen - scaleMinLimit) / offsetSpan;
-
-        Debug.Log(positionOnScreenNormalized);
-
-        float scaleX = Mathf.Clamp(positionOnScreenNormalized + offset, scaleMinLimit, scaleMaxLimit);
-        float scaleY = Mathf.Clamp(positionOnScreenNormalized + offset, scaleMinLimit, scaleMaxLimit);
+        float scale = Mathf.Abs(positionToScale - transform.position.y) / 2;
+        float scaleX = Mathf.Clamp(scale, scaleMin, scaleMax);
+        float scaleY = Mathf.Clamp(scale, scaleMin, scaleMax);
         transform.localScale = new Vector3(scaleX, scaleY, 0f);
     }
 }
