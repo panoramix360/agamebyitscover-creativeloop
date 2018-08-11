@@ -2,7 +2,7 @@
 
 public class ScaleBasedOnY : MonoBehaviour {
 
-    public float positionToScale = 4f;
+    public Transform positionToScale;
 
     public float scaleMin = 2.5f;
     public float scaleMax = 5f;
@@ -21,7 +21,7 @@ public class ScaleBasedOnY : MonoBehaviour {
 
     private void HandleDistance()
     {
-        float scale = Mathf.Abs(positionToScale - transform.position.y) / 2;
+        float scale = Mathf.Abs(positionToScale.position.y - transform.position.y) / 2;
         float scaleX = Mathf.Clamp(scale, scaleMin, scaleMax);
         float scaleY = Mathf.Clamp(scale, scaleMin, scaleMax);
         transform.localScale = new Vector3(scaleX, scaleY, 0f);
