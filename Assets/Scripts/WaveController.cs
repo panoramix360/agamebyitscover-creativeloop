@@ -5,31 +5,42 @@ public class WaveController : MonoBehaviour {
 
     public Wave[] waves;
 
-    private float spawnRate;
+    private Vector2 nextPosition;
+
+    private int waveIndex = 0;
+    private float spawnRate = 2f;
 
     private void Awake()
     {
-        spawnRate = 2f;
         StartCoroutine(SpawnSatellites());
     }
 
     IEnumerator SpawnSatellites()
     {
-        Wave currentWave = waves[0];
-
-        for (int i = 0; i < currentWave.count; i++)
+        while(true)
         {
+            Wave currentWave = waves[waveIndex];
+
+            GenerateNextPosition();
             SpawnSatellite(currentWave.satellite);
-            yield return new WaitForSeconds(1f / spawnRate);
+            yield return new WaitForSeconds(2f / spawnRate);
         }
     }
 
     private void SpawnSatellite(GameObject satellite)
     {
-        GameObject newSatellite = Instantiate(satellite, transform.position, Quaternion.identity);
+        GameObject newSatellite = Instantiate(satellite, nextPosition, Quaternion.identity);
         Rigidbody2D rigidbody = newSatellite.GetComponent<Rigidbody2D>();
-        rigidbody.AddTorque(Random.Range(-20f, 20f));
-        rigidbody.AddForce(new Vector2(-30f, 0f));
+        rigidbody.AddTorque(Random.Range(-40f, 40f));
+        rigidbody.AddForce(new Vector2(-250f, 0f));
+    }
+
+    private void GenerateNextPosition()
+    {
+        Vector3 topScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0f));
+        Vector3 bottomScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
+        float randomY = Random.Range(topScreen.y, bottomScreen.y);
+        nextPosition = new Vector2(transform.position.x, randomY);
     }
 
     private void OnDrawGizmosSelected()

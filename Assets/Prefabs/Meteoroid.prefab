@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58374093794608442}
   - component: {fileID: 50952819244343054}
   - component: {fileID: 114023096341324154}
+  - component: {fileID: 114512698601500536}
   m_Layer: 0
   m_Name: Meteoroid
   m_TagString: Untagged
@@ -72,7 +73,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -89,9 +90,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4a040fcf32bc94ebda01db6b98a10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionToScale: {fileID: 0}
+  positionToScale: {fileID: 1094625742817334, guid: 9dd3212a17f25c246b68d3f964e98e9e,
+    type: 2}
   scaleMin: 2.5
   scaleMax: 5
+--- !u!114 &114512698601500536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329597434879218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093bb4476335a234eb0e2a9b0369ff5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1730372395820244, guid: 3177dcc5426674241bb0d7525b317cbf,
+    type: 2}
 --- !u!212 &212792294987700478
 SpriteRenderer:
   m_ObjectHideFlags: 1
