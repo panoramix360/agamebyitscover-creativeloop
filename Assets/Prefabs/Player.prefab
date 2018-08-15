@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50545659519649544}
   - component: {fileID: 114501005411314800}
   - component: {fileID: 58935769188984898}
-  - component: {fileID: 114353526244194684}
+  - component: {fileID: 114205456456762912}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902889129967182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.83, y: 2.94, z: 0}
-  m_LocalScale: {x: 5.0273995, y: 5.0273995, z: 0}
+  m_LocalPosition: {x: -0.14, y: -3.56, z: 0}
+  m_LocalScale: {x: 2.991303, y: 2.991303, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &114353526244194684
+--- !u!114 &114205456456762912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,13 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1902889129967182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4a040fcf32bc94ebda01db6b98a10d, type: 3}
+  m_Script: {fileID: 11500000, guid: ac212219cdbc9ce47bd745e4fe5da512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionToScale: {fileID: 1094625742817334, guid: 9dd3212a17f25c246b68d3f964e98e9e,
-    type: 2}
-  scaleMin: 2.5
-  scaleMax: 5
 --- !u!114 &114501005411314800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +135,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1108842059
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 161070b246a62ee46acf16379da8fb79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
