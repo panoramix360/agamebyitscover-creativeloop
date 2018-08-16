@@ -15,7 +15,6 @@ public class PlayerCollision : MonoBehaviour {
         {
             SatelliteController satellite = collision.GetComponent<SatelliteController>();
             Debug.Log(satellite);
-            satellite.Damage();
         }
     }
 }
