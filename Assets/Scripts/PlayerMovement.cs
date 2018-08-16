@@ -18,14 +18,16 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        HandleMovement(vertical);   
+
+        HandleMovement(horizontal, vertical);   
     }
 
-    private void HandleMovement(float verticalInput)
+    private void HandleMovement(float horizontalInput, float verticalInput)
     {
-        if(verticalInput == 0)
+        if(verticalInput == 0 && horizontalInput == 0)
         {
             speed = 0;
         }
@@ -34,6 +36,6 @@ public class PlayerMovement : MonoBehaviour {
             speed = initialSpeed;
         }
 
-        rigidbody.AddForce(new Vector2(0f, speed * verticalInput));
+        rigidbody.AddForce(new Vector2(speed * horizontalInput, speed * verticalInput));
     }
 }
