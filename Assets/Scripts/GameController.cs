@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour {
             if(targetToIncreaseScale == countToIncreaseScale)
             {
                 distantScaleToSum *= 1.1f;
+                distantYToSum *= 1.1f;
                 countToIncreaseScale = 0;
             }
         }
