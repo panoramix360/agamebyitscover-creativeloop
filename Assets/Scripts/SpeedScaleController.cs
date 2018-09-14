@@ -17,7 +17,7 @@ public class SpeedScaleController : Observer {
 
     public override void OnNotify()
     {
-        if (transform.localScale.x > 3f)
+        if (transform.localScale.x > 2f)
         {
             speedY += 0.0005f;
         }

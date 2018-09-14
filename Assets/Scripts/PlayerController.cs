@@ -51,7 +51,14 @@ public class PlayerController : MonoBehaviour {
             speed = initialSpeed;
         }
 
-        rigidbody.AddForce(new Vector2(speed * horizontalInput, speed * verticalInput));
+        if(transform.position.y < 0)
+        {
+            rigidbody.AddForce(new Vector2(speed * horizontalInput, speed * verticalInput));
+        }
+        else
+        {
+            rigidbody.AddForce(new Vector2(0f, speed * -1));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
