@@ -14,7 +14,10 @@ namespace Assets.Scripts.Observer
             {
                 //Notify all observers even though some may not be interested in what has happened
                 //Each observer should check if it is interested in this event
-                observers[i].OnNotify();
+                if(observers[i] != null)
+                {
+                    observers[i].OnNotify();
+                }
             }
         }
 

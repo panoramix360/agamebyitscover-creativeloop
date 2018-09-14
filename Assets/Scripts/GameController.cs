@@ -54,4 +54,9 @@ public class GameController : MonoBehaviour {
             targetSpeedTime = initSpeedTime;
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawLine(new Vector3(Screen.width / 2 * -1, 2.5f), new Vector3(Screen.width, 2.5f));
+    }
 }

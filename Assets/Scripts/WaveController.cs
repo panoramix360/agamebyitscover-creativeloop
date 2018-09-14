@@ -5,6 +5,8 @@ public class WaveController : MonoBehaviour {
 
     public Wave[] waves;
 
+    [SerializeField]
+    private Camera viewport;
     private Vector2 nextPosition;
 
     private int waveIndex = 0;
@@ -15,7 +17,7 @@ public class WaveController : MonoBehaviour {
         StartCoroutine(SpawnSatellites());
     }
 
-    IEnumerator SpawnSatellites()
+    private IEnumerator SpawnSatellites()
     {
         while(true)
         {
@@ -23,7 +25,7 @@ public class WaveController : MonoBehaviour {
 
             GenerateNextPosition();
             SpawnSatellite(currentWave.satellite);
-            yield return new WaitForSeconds(2f / spawnRate);
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
         }
     }
 
@@ -32,20 +34,20 @@ public class WaveController : MonoBehaviour {
         GameObject newSatellite = Instantiate(satellite, nextPosition, Quaternion.identity);
         Rigidbody2D rigidbody = newSatellite.GetComponent<Rigidbody2D>();
         rigidbody.AddTorque(Random.Range(-40f, 40f));
-        rigidbody.AddForce(new Vector2(-250f, 0f));
     }
 
     private void GenerateNextPosition()
     {
-        Vector3 topScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0f));
-        Vector3 bottomScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-        float randomY = Random.Range(topScreen.y, bottomScreen.y);
-        nextPosition = new Vector2(transform.position.x, randomY);
-    }
+        float topScreen = 4f;
+        Debug.DrawLine(Vector3.zero, new Vector3(10f, topScreen), Color.red, 10f);
+        float randomY = Random.Range(topScreen, 0);
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(new Vector3(transform.position.x, transform.position.y, 0f), 5);
+        float leftScreen = -4.5f;
+        Debug.DrawLine(Vector3.zero, new Vector3(leftScreen, 1f), Color.red, 10f);
+        float rightScreen = 4.5f;
+        Debug.DrawLine(Vector3.zero, new Vector3(rightScreen, 0f), Color.blue, 10f);
+        float randomX = Random.Range(leftScreen, rightScreen);
+
+        nextPosition = new Vector2(randomX, randomY);
     }
 }

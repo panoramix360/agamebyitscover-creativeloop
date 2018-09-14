@@ -9,48 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1994109328580774}
+  m_RootGameObject: {fileID: 1648982836733872}
   m_IsPrefabAsset: 1
---- !u!1 &1994109328580774
+--- !u!1 &1648982836733872
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4559480283710418}
-  - component: {fileID: 212328990927363396}
-  - component: {fileID: 50443244152345618}
-  - component: {fileID: 58808328645398056}
-  - component: {fileID: 114612492874822814}
-  - component: {fileID: 114142860535451662}
+  - component: {fileID: 4059776673775564}
+  - component: {fileID: 212469359822591328}
+  - component: {fileID: 50177343045769514}
+  - component: {fileID: 58313419592829072}
   m_Layer: 0
-  m_Name: Meteoroid
+  m_Name: MeteoroidPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4559480283710418
+--- !u!4 &4059776673775564
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994109328580774}
+  m_GameObject: {fileID: 1648982836733872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01803, y: 2.0712118, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50443244152345618
+--- !u!50 &50177343045769514
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994109328580774}
+  m_GameObject: {fileID: 1648982836733872}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -64,12 +62,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58808328645398056
+--- !u!58 &58313419592829072
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994109328580774}
+  m_GameObject: {fileID: 1648982836733872}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -78,40 +76,13 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
---- !u!114 &114142860535451662
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994109328580774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 388e45c4721978a44b0601b91386c875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114612492874822814
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994109328580774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 093bb4476335a234eb0e2a9b0369ff5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meteoroidPartPrefab: {fileID: 1648982836733872, guid: 0c8af45016779e94f9e3b05353c6fa26,
-    type: 2}
-  meteoroidPartsMax: 4
-  meteoroidPartSpeedMin: 3
-  meteoroidPartSpeedMax: 5
---- !u!212 &212328990927363396
+  m_Radius: 0.16
+--- !u!212 &212469359822591328
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994109328580774}
+  m_GameObject: {fileID: 1648982836733872}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -141,12 +112,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d83acca3eacc03f46bc3efad4f15b5a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6db886bb172b5d34a9e9cc18c22983c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.46, y: 0.52}
+  m_Size: {x: 0.37, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
