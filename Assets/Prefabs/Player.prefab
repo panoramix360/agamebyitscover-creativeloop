@@ -252,6 +252,8 @@ MonoBehaviour:
   - {fileID: 1587631163200396}
   - {fileID: 1786089907946316}
   speedPieces: 150
+  controller: {fileID: 0}
+  lastCollision: {fileID: 0}
 --- !u!212 &212033194321531506
 SpriteRenderer:
   m_ObjectHideFlags: 1

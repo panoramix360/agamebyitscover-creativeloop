@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject[] lostPieces;
     public float speedPieces = 150f;
 
+    public GameObject controller;
+
     private int damageCount = -1;
     public Collider2D lastCollision;
     private int piecesLost = 0;
@@ -106,7 +108,8 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Game end");
+            Destroy(gameObject);
+            controller.GetComponent<GameController>().GameOver();
         }
     }
 

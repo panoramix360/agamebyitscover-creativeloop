@@ -14,6 +14,11 @@ public class GameController : MonoBehaviour {
     public static Subject distantSubject = new Subject();
     public static Subject speedSubject = new Subject();
 
+    [SerializeField]
+    private GameObject earth;
+    [SerializeField]
+    private SceneFader sceneFader;
+
     private float initSpeedTime = .01f;
     private float targetSpeedTime;
 
@@ -53,6 +58,21 @@ public class GameController : MonoBehaviour {
             speedSubject.Notify();
             targetSpeedTime = initSpeedTime;
         }
+
+        if (earth.transform.localScale.x > 19f)
+        {
+            GameEnd();
+        }
+    }
+
+    public void GameOver()
+    {
+        sceneFader.FadeTo("Retry");
+    }
+
+    private void GameEnd()
+    {
+        sceneFader.FadeTo("End");
     }
 
     private void OnDrawGizmosSelected()
