@@ -38,6 +38,12 @@ public class PlayerController : MonoBehaviour {
         verticalInput = Input.GetAxis("Vertical");
 
         HandleMovement();
+
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("End");
+        }
     }
 
     private void HandleMovement()
